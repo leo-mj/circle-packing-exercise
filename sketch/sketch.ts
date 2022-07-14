@@ -49,8 +49,26 @@ function moveAllCircles() {
 }
 
 function move(c: Circle) {
-  c.pos.x += 1;
-  c.pos.y += 2;
+  moveX(c);
+  moveY(c);
+  return c;
+}
+
+function moveX(c: Circle) {
+  if (c.pos.x <= windowWidth) {
+    c.pos.x += 1;
+  } else {
+    c.pos.x = random(0, windowWidth/3);
+  }
+  return c;
+}
+
+function moveY(c: Circle) {
+  if (c.pos.y <= windowHeight) {
+    c.pos.y += 3;
+  } else {
+    c.pos.y = random(0, windowHeight/3);
+  }
   return c;
 }
 
