@@ -14,7 +14,7 @@ function calculatePackedCircles(areaWidth: number, areaHeight: number): Circle[]
     
     const validatedCircles: Circle[]= [];
 
-    for (let i=0; i<1000; i++) {
+    for (let i=0; i<200; i++) {
         const candidate: Circle = makeCircle(areaWidth,areaHeight);
         if (!overlap(candidate, validatedCircles)) {
             validatedCircles.push(candidate)
@@ -26,7 +26,7 @@ function calculatePackedCircles(areaWidth: number, areaHeight: number): Circle[]
 }
 
 function makeCircle(areaWidth: number, areaHeight: number): Circle {
-    const randomCircle: Circle = { pos: { x: random(0, areaWidth), y: random(0, areaHeight) }, radius: random(0,100) }
+    const randomCircle: Circle = { pos: { x: random(0, areaWidth), y: random(0, areaHeight) }, radius: random(0,30) }
     return randomCircle
 
 }
