@@ -17,13 +17,16 @@ function createCirclesArray() {
 function draw() {
   moveAllCircles()
   background('white');
-  let i = 0;
   for (const c of circlesArray) {
-    fill(palette[i]);
-    if (i < 4) {
-      i++;
-    } else {
-      i = 0;
+    
+    if (c.pos.y > height/2 && c.pos.x < width/2) {
+      fill(palette[0]);
+    } else if (c.pos.y < height/2 && c.pos.x < width/2) {
+      fill(palette[1]);
+    } else if (c.pos.y < height/2 && c.pos.x > width/2) {
+      fill(palette[2]);
+    }else{
+      fill(palette[3]);
     }
     drawCircle(c);
   }
